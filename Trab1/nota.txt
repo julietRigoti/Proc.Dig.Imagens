@@ -1,0 +1,44 @@
+Interface grafica
+
+uma caxinha para escrever o nome da imagem
+uma caxinha para escolher a dimensao (?) - Passa-baixa(Threshold Level (opção média e mediana)); Roberts; Prewitt(Horizontal - Vertical - Horizontal+Vertical - Edge); Sobel(Horizontal - Vertical - Horizontal+Vertical - Edge); Log; Ruídos;
+uma caxinha para escolher qual algoritmo o usuario quer
+
+a saida: colocar a imagem original e a modificada do lado
+
+
+Algoritmos/Tecnicas
+    Limiarizacao (Threshold)
+        Tecnica simples que divide uma imagem em duas regioes: pixels com intensidade acima de um limiar(intensidade de cinza) e abaixo dele.
+    Escala de Cinza
+        Representacao de uma imagem em tons de cinza, variando do preto ao branco
+    Passa-Alta
+        Basico: Realça bordas e detalhes finos na imagem, atenuando regiões de intensidade mais homogênea.
+        Alto Reforco: Versão mais intensa do filtro passa-alta, ideal para realçar detalhes muito finos.
+    Passa-Baixa
+        Média (Básico): Suaviza a imagem, reduzindo ruído e detalhes, mas também pode causar perda de nitidez.
+        Mediana: Reduz ruído impulsivo (salt and pepper) e preserva bordas melhor que o filtro da média
+    Roberts, Prewitt, Sobel:
+        Operadores de gradiente utilizados para detecção de bordas em uma imagem. Calculam a magnitude e a direção do gradiente em cada pixel.
+            Roberts: Utiliza um pequeno máscara para detectar bordas diagonais.
+            Prewitt: Emprega máscaras maiores, sensíveis a bordas horizontais e verticais.
+            Sobel: Similar ao Prewitt, mas com pesos diferentes, o que o torna menos sensível ao ruído.
+        Diferenças: Variam na forma como calculam o gradiente, sendo o Sobel geralmente considerado um bom compromisso entre precisão e ruído.
+    Log
+        Realça detalhes em regiões de baixa intensidade, compressando a faixa dinâmica da imagem.
+    Zerocross
+        Detecção de zeros na segunda derivada da imagem, utilizada para encontrar bordas.
+    Canny
+        Detector de bordas multi-estágio que combina filtragem de Gauss, cálculo de gradiente, supressão de não-máximos e limiarização para obter bordas finas e bem localizadas.
+    Ruídos(salt & pepper, etc)
+        Tipo de ruído que introduz pixels com valores máximos (branco) ou mínimos (preto) aleatoriamente na imagem.
+    Watershed
+        Algoritmo de segmentação baseado em um análogo hidrográfico, onde a imagem é vista como um relevo. As regiões são definidas pelas bacias hidrográficas formadas pela inundação do relevo.
+    Histograma (Escala de cinza)
+        Representação gráfica da distribuição dos níveis de intensidade em uma imagem.
+    Ajuste adaptativo de histograma
+        Técnica de equalização de histograma aplicada localmente em regiões da imagem, permitindo ajustar o contraste de forma mais precisa e preservar detalhes.
+    Contagem simples de objetos limiarizados com marcação na imagem
+        Processo de contar o número de objetos em uma imagem binarizada (obtida por limiarização), geralmente marcando cada objeto encontrado.
+
+De acordo com o gemini, dá para juntar historgrama e limiarização, filtros passa-baixa e limiarização, filtro passa-baixa e gradiente, limiarização e watershed, ruido e filtros passa-baixa, salt and pepper e mediana.

@@ -1,4 +1,4 @@
-imagem = imread('file:///home/juliet/Documents/CC/PDI/tchola.jpg');
+imagem = imread('file:///home/juliet/Documents/CC/PDI/tsunadeDeJuliet.jpg');
 
 img = rgb2gray(imagem);  % Converter para escala de cinza, se necess?rio
 
@@ -15,4 +15,4 @@ title('Imagem Original');
 
 subplot(1, 3, 2);
 imshow(img_media, []);
-title('Filtro de M‚dia');
+title('Filtro de Mï¿½dia');
