@@ -1,23 +1,36 @@
 Interface grafica
 
-uma caxinha para escrever o nome da imagem
-uma caxinha para escolher a dimensao (?) - Passa-baixa(Threshold Level (opção média e mediana)); Roberts; Prewitt(Horizontal - Vertical - Horizontal+Vertical - Edge); Sobel(Horizontal - Vertical - Horizontal+Vertical - Edge); Log; Ruídos;
+uma caxinha para escrever o nome da imagem - FEITO 
+uma caxinha para escolher a dimensao (?) - 
+    Passa-baixa(Threshold Level (opção média e mediana)); 
+    Roberts; 
+    Prewitt(Horizontal - Vertical - Horizontal+Vertical - Edge); 
+    Sobel(Horizontal - Vertical - Horizontal+Vertical - Edge); 
+    Log; 
+    Ruídos;
 uma caxinha para escolher qual algoritmo o usuario quer
 
 a saida: colocar a imagem original e a modificada do lado
 
 
 Algoritmos/Tecnicas
-    Limiarizacao (Threshold)
+
+    Limiarizacao (Threshold) (Precisa de um label para o valor do threshold)
         Tecnica simples que divide uma imagem em duas regioes: pixels com intensidade acima de um limiar(intensidade de cinza) e abaixo dele.
-    Escala de Cinza
+            Então eu pego uma imagem qualquer, transformo em uma imagem cinza e ai aplico a imagem binaria
+            parece que essa tecnica precisa de um valor especifico 
+            
+    Escala de Cinza (Feito)
         Representacao de uma imagem em tons de cinza, variando do preto ao branco
-    Passa-Alta
+
+    Passa-Alta (Falta do Alto Reforço)
         Basico: Realça bordas e detalhes finos na imagem, atenuando regiões de intensidade mais homogênea.
         Alto Reforco: Versão mais intensa do filtro passa-alta, ideal para realçar detalhes muito finos.
+
     Passa-Baixa
         Média (Básico): Suaviza a imagem, reduzindo ruído e detalhes, mas também pode causar perda de nitidez.
         Mediana: Reduz ruído impulsivo (salt and pepper) e preserva bordas melhor que o filtro da média
+        
     Roberts, Prewitt, Sobel:
         Operadores de gradiente utilizados para detecção de bordas em uma imagem. Calculam a magnitude e a direção do gradiente em cada pixel.
             Roberts: Utiliza um pequeno máscara para detectar bordas diagonais.
@@ -42,3 +55,24 @@ Algoritmos/Tecnicas
         Processo de contar o número de objetos em uma imagem binarizada (obtida por limiarização), geralmente marcando cada objeto encontrado.
 
 De acordo com o gemini, dá para juntar historgrama e limiarização, filtros passa-baixa e limiarização, filtro passa-baixa e gradiente, limiarização e watershed, ruido e filtros passa-baixa, salt and pepper e mediana.
+
+
+Threshold - PRONTO
+Grayscale - PRONTO
+High Pass
+    Basic - PRONTO
+    High reinforcement
+Low Pass
+    Medium (Basic) - PRONTO
+    Median - PRONTO
+Roberts
+Prewitt
+Sobel
+Log
+Zerocross
+Canny
+Noises (salt & pepper, etc.)
+Watershed - PRONTO
+Histogram (Grayscale) - PRONTO
+Adaptive histogram adjustment - PRONTO
+Simple counting of thresholded objects with image markup  - PRONTO
